@@ -1,6 +1,6 @@
 grange-boilerplate
 ==================
-![Header La Grange](http://clients.la-grange.ca/grange/header_grange.jpg "Header La Grange")
+![Header La Grange](http://clients.la-grange.ca/grange/grange_header.jpg "Header La Grange")
 
 Boilerplate pour les projets de [La Grange](http://la-grange.ca "La Grange").
 

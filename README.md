@@ -15,13 +15,12 @@ Notes importantes
 * Les librairies JS et LESS/CSS devraient être mises à jour le plus souvent possible
 * Les modifications majeures du projets doivent être logger dans le CHANGELOG.md
 
-***
-
 Structure des dossiers
 ----------------------
 ##### /css
 Fichiers .css seulement
 
+***
 ##### /less
 Le fichier master.less sera situé à la racine de ce dossier. Les autres fichiers .less sont disposés selon cette structure :
 * _/common_ :
@@ -29,12 +28,15 @@ Le fichier master.less sera situé à la racine de ce dossier. Les autres fichie
 * _/website_ :
 	Ici, les fichiers spécifiques à chaque projet, ex: "basic.less", "header.less", etc.
 
+***
 ##### /img
 Fichiers images seulement
 
+***
 ##### /assets
 Fonts et sons
 
+***
 ##### /js
 Le fichier main.js (app.js si le projet utilise Require.js) sera situé à la racine de ce dossier. Les autres fichiers .js sont disposés selon cette structure :
 * _/vendor_ :

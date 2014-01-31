@@ -22,10 +22,10 @@ Fichiers .css seulement
 
 ##### /less
 Le fichier master.less sera situé à la racine de ce dossier. Les autres fichiers .less sont disposés selon cette structure :
-	###### /common
-	Ici, les fichiers communs à tous les projets, ex: "responsive.less", "reset.less", etc.
-	###### /website
-	Ici, les fichiers spécifiques à chaque projet, ex: "basic.less", "header.less", etc.
+* /common
+Ici, les fichiers communs à tous les projets, ex: "responsive.less", "reset.less", etc.
+* /website
+Ici, les fichiers spécifiques à chaque projet, ex: "basic.less", "header.less", etc.
 
 ##### /img
 Fichiers images seulement
@@ -35,9 +35,9 @@ Fonts et sons
 
 ##### /js
 Le fichier main.js (app.js si le projet utilise Require.js) sera situé à la racine de ce dossier. Les autres fichiers .js sont disposés selon cette structure :
-	###### /vendor
-	Ici, les snippets, librairies et classes dont le code source n'est pas propriété de La Grange. Même si une librairie est liscencié sous MIT ou autre liscence libre, elle doit être mise dans ce dossier par soucis de clarté.
-	###### /grange
-	Ici, les snippets, librairies et classes propres à La Grange.
-	###### /[nom de dossier relatif au projet]
-	Ici, le code et classes spécifiques au projet. 
+* /vendor
+Ici, les snippets, librairies et classes dont le code source n'est pas propriété de La Grange. Même si une librairie est liscencié sous MIT ou autre liscence libre, elle doit être mise dans ce dossier par soucis de clarté.
+* /grange
+Ici, les snippets, librairies et classes propres à La Grange.
+* /[nom de dossier relatif au projet]
+Ici, le code et classes spécifiques au projet. 

@@ -1,0 +1,166 @@
+	/* Gutter de 0 */
+	@totalWidth : 968px;	
+	@gutter : 30px;
+	@leftPad: 30px;
+
+	#responsive > .set(@totalWidth, @gutter, @leftPad);
+
+	.container{
+		position:relative;
+		.container-fixed();
+		padding: 0;
+	}
+	
+	.main {
+		.clearfix();	
+	}
+
+	.col {
+		float:left;
+		margin-left:@gutter;
+	}
+
+	.col, .row{
+		.clearfix();
+	}
+
+/* ---------------------------------------------- */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+#responsive{
+	.set(@outerW, @gutter, @leftPad){
+		@w: @outerW;//@outerW - @leftPad;
+
+		@col12 : floor((@w - 11 * @gutter ) / 12) ;
+		@col6 : floor((@w - 5 * @gutter ) / 6) ;
+		
+		.container{
+			width: @w;
+		}
+
+		.wrapper{
+			margin:0 auto;
+			padding-left:@leftPad;
+			width: @w;
+		}
+		
+		//==============================
+		// Twelve
+		//==============================
+		.oneTwelfth {
+			.span(1);
+		}
+
+		//==============================
+		// Sixth
+		//==============================
+		.sixth {
+			.span(2);
+		}
+
+		//==============================
+		// Quarters
+		//==============================
+		.quarter {
+			.span(3);
+		}
+
+		.threeQuarters {
+			.span(9);
+		}
+
+		//==============================
+		// Thirds
+		//==============================
+		.third{
+			.span(4);
+		}
+
+		.twoThirds {
+			.span(8);
+		}
+
+		//==============================
+		// Half
+		//==============================
+		.half{
+			.span(6);
+
+			&.nogutter {
+				margin-left: 0;
+				.spanNoGutter(6);
+			}
+		}
+
+		//==============================
+		// Full Width
+		//==============================
+		.full{
+			.span(12);
+		}
+
+		.col{
+			margin-left:@gutter;
+		}
+		
+		.row {
+			margin-left: @gutter * -1;
+			width: @w;// + @gutter;
+			position:relative;
+		}
+				
+		.span(@n) {
+			float: left;
+			.span(@n, @col12);
+		}
+
+		.spanNoGutter(@n) {
+			float: left;
+			.spanNoGutter(@n, @col12);
+		}
+		
+		.span(@n) when (@w =< 750) and(@w > 470) and (@n < 12){
+			.span(@n, @col6);
+		}
+		
+		//pas de colonnes en bas de 480
+		.span(@n) when (@w =< 470){
+			.span(6, @col6);
+		}
+		
+		.span(@n, @colW) {
+			width: (@colW * @n) + (@gutter * (@n - 1));
+			margin-left: @gutter;
+		}
+
+		.spanNoGutter(@n, @colW) {
+			width: (@colW * @n) + (@gutter *  @n);
+		}
+	}
+
+	.set(@outerW, @gutter, @leftPad) when (@outerW =< 767px) {
+		.wrapper {
+			width: 100%;
+		}
+
+		.col {
+			margin-left: 0;
+			float: none;
+		}
+
+		.row {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}

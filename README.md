@@ -4,17 +4,16 @@ grange-boilerplate
 
 Boilerplate pour les projets de [La Grange](http://la-grange.ca "La Grange").
 
-Composera la structure de base des projets chez La Grange. Contiendra donc la structure
+Compose la structure de base des projets chez La Grange. Contient donc la structure
 des dossiers, ainsi que les principales librairies JavaScript et LESS/CSS.
 
 Notes importantes
 -----------------
-* Si un changement majeur de librairie est à faire, par exemple passer de Boostrap 2 à 3, le faire sur une nouvelle branche
-	nommée selon la nomenclature suivante : dev_[librairie]_[versionX_to_versionY] ou [librairie] équivaudrais ici à boostrap et [versionX_to_versionY] à version2_to_version3. On ne peut merger que lorsqu'on est sur que tout est compatible et fonctionne comme il faut.
-* Comme c'est un projet pour les ressources internes, la documentation sera faite en français.
-* Il est important de bien documenter chaque ajout et modification majeure à ce projet sur le [système de documentation](http://workflow.grange "Documentation boilerplate") prévu à cet effet.
+* AVANT DE grunt-init UN PROJET, PULLEZ POUR ÊTRE SUR D'AVOIR LA BONNE VERSION
 * Les librairies JS et LESS/CSS devraient être mises à jour le plus souvent possible
-* Les modifications majeures du projets doivent être logger dans le CHANGELOG.md
+* Lors d'un commit, le faire le plus clair possible et mettre en détail les choses longues à expliquer dans le champ description pour qu'on puisse suivre les modifications facilement.
+* Si un changement majeur de librairie est à faire, par exemple passer de Boostrap 2 à 3, le faire sur une nouvelle branche nommée selon la nomenclature suivante : dev_[librairie]\_[versionX_to_versionY] ou [librairie] équivaudrais ici à boostrap et [versionX_to_versionY] à version2_to_version3. On ne peut merger que lorsqu'on est sur que tout est compatible et fonctionne comme il faut.
+* Il est important de bien documenter chaque ajout et modification majeure à ce projet qui affecte le _workflow_ sur le [système de documentation](http://workflow.grange "Documentation workflow") prévu à cet effet.
 
 Structure des dossiers
 ----------------------

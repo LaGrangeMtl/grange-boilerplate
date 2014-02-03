@@ -135,7 +135,7 @@ exports.template = function(grunt, init, done) {
 		} else {
 			props.js_include = '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>\r\n'+
 								'<script>window.jQuery || document.write(\'<script src="{dir}/js/libs/jquery.min.js"><\/script>\')</script>\r\n'+
-								'<script src="js/{%= name %}.js"></script>';
+								'<script src="js/main.js"></script>';
 		}
 		
 		// Actually copy (and process) files.

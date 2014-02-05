@@ -26,25 +26,8 @@
 		'isChildDefault'=>'isChildDefault',//indique que cette page montre son premier child plutot qu'elle même dans le menu
 		'cssId'=>'cssId',
 	);
-	
-	
-	//$this->secondaryNav['top'] = array('root'=>193);
-	
+		
 	
 	class NavHooks {
-		//limite le menu aux categories de documents dans lesquelles il y a des docs accessibles par ce user
-		public static function parseExternalSQL($sql) {
-			if($sql->getTable() == 'docs_categs') {
 				
-				$docsUserGroup = Hooks::getUserDocsGroup();
-				if($docsUserGroup){
-					$sql->addJoin('INNER', 'docs_documents AS `docs`', 'docs_categs.id = `docs`.categ');
-					$sql->addJoin('INNER', 'docs_docgroupe_mtm AS `perms`', 'perms.doc = `docs`.id AND perms.groupe = ' . $docsUserGroup);
-					//Utils::debug($sql);
-					/*$qstr = $sql->getSQL();
-					Utils::debug($qstr);/***/
-				}			
-			}
-		}
-		
 	}

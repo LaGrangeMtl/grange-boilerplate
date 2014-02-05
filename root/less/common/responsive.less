@@ -1,9 +1,8 @@
-	/* Gutter de 0 */
+	
 	@totalWidth : 968px;	
-	@gutter : 30px;
-	@leftPad: 30px;
+	@gutter : 10px;
 
-	#responsive > .set(@totalWidth, @gutter, @leftPad);
+	#responsive > .set(@totalWidth, @gutter);
 
 	.container{
 		position:relative;
@@ -38,129 +37,66 @@
 /* ---------------------------------------------- */
 
 #responsive{
-	.set(@outerW, @gutter, @leftPad){
-		@w: @outerW;//@outerW - @leftPad;
 
-		@col12 : floor((@w - 11 * @gutter ) / 12) ;
-		@col6 : floor((@w - 5 * @gutter ) / 6) ;
+	.set(@w, @gutter){
 		
+		@col12 : floor((@w - 11 * @gutter ) / 12) ;
+
 		.container{
 			width: @w;
 		}
 
-		.wrapper{
-			margin:0 auto;
-			padding-left:@leftPad;
-			width: @w;
+		.row{
+			margin-left: @gutter * -1;
+			width: @w + @gutter;
 		}
 		
-		//==============================
-		// Twelve
-		//==============================
-		.oneTwelfth {
-			.span(1);
-		}
 
-		//==============================
-		// Sixth
-		//==============================
-		.sixth {
-			.span(2);
-		}
-
-		//==============================
-		// Quarters
-		//==============================
-		.quarter {
-			.span(3);
-		}
-
-		.threeQuarters {
-			.span(9);
-		}
-
-		//==============================
-		// Thirds
-		//==============================
-		.third{
-			.span(4);
-		}
-
-		.twoThirds {
-			.span(8);
-		}
-
-		//==============================
-		// Half
-		//==============================
-		.half{
-			.span(6);
-
-			&.nogutter {
-				margin-left: 0;
-				.spanNoGutter(6);
-			}
-		}
-
-		//==============================
-		// Full Width
-		//==============================
-		.full{
+		.fullWidth{
 			.span(12);
 		}
 
-		.col{
-			margin-left:@gutter;
+		.twoThirds{
+			.span(8);
 		}
-		
-		.row {
-			margin-left: @gutter * -1;
-			width: @w;// + @gutter;
-			position:relative;
+
+		.oneThird{
+			.span(4);
+		}
+
+		.oneSixth{
+			.span(2);
+		}
+
+		.half{
+			.span(6);
 		}
 				
 		.span(@n) {
-			float: left;
-			.span(@n, @col12);
+			#responsiveMixins > .span(@n, @col12, @gutter);
 		}
 
-		.spanNoGutter(@n) {
-			float: left;
-			.spanNoGutter(@n, @col12);
-		}
-		
-		.span(@n) when (@w =< 750) and(@w > 470) and (@n < 12){
-			.span(@n, @col6);
-		}
-		
-		//pas de colonnes en bas de 480
-		.span(@n) when (@w =< 470){
-			.span(6, @col6);
-		}
-		
-		.span(@n, @colW) {
-			width: (@colW * @n) + (@gutter * (@n - 1));
-			margin-left: @gutter;
-		}
 
-		.spanNoGutter(@n, @colW) {
-			width: (@colW * @n) + (@gutter *  @n);
+	}
+
+	
+}
+
+#responsiveMixins{
+	//bloc qui prend un certain nombre de colonnes de large, avec une marge à gauche
+	.span(@n, @colW, @gutter) {
+		width: (@colW * @n) + (@gutter * (@n - 1));
+		margin-left: @gutter;
+		margin-bottom: @gutter;
+		#responsiveMixins > .col();
+		//background: rgba(200, 200, 255, 0.3);
+
+		.row{
+			width: ((@colW + @gutter) * @n);
 		}
 	}
 
-	.set(@outerW, @gutter, @leftPad) when (@outerW =< 767px) {
-		.wrapper {
-			width: 100%;
-		}
-
-		.col {
-			margin-left: 0;
-			float: none;
-		}
-
-		.row {
-			width: 100%;
-			margin-left: 0;
-		}
+	.col{
+		float:left;
 	}
 }

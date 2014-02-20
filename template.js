@@ -182,6 +182,7 @@ exports.template = function(grunt, init, done) {
 			'grunt-contrib-jshint': '~0.8.0',
 			'grunt-contrib-watch': '~0.5.3',
 			'grunt-contrib-less' : '~0.9.0',
+			'grunt-notify' : '~0.2.17',
 		};
 
 		if(props.is_requirejs && props.is_freestone){

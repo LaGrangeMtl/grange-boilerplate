@@ -182,17 +182,18 @@ exports.template = function(grunt, init, done) {
 			'grunt-contrib-jshint': '~0.8.0',
 			'grunt-contrib-watch': '~0.5.3',
 			'grunt-contrib-less' : '~0.9.0',
+			'grunt-notify' : '~0.2.17',
 		};
 
-		if(props.is_requirejs && props.is_freestone){
+		if(props.is_requirejs == 'y' && props.is_freestone == 'y'){
 			props.devDependencies['grunt-contrib-requirejs'] = '~0.4.1';
 			props.rjs_include = '<script data-main="{dir}/js/app.js" src="{dir}/js/require.js"></script>';
 		} 
-		else if(props.is_requirejs) {
+		else if(props.is_requirejs == 'y') {
 			props.devDependencies['grunt-contrib-requirejs'] = '~0.4.1';
 			props.rjs_include = '<script data-main="js/app.js" src="js/require.js"></script>';
 		}
-		else if(props.is_freestone) {
+		else if(props.is_freestone == 'y') {
 			props.js_include = '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>\r\n'+
 								'<script>window.jQuery || document.write(\'<script src="{dir}/js/libs/jquery.min.js"><\/script>\')</script>\r\n'+
 								'<script src="{dir}/js/main.js"></script>';

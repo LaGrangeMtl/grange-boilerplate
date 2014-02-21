@@ -18,4 +18,4 @@
 		});
 	});
 	
-})(window.testgrnt = window.testgrnt || {});
+})(window.{%= name %} = window.{%= name %} || {});
